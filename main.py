@@ -78,7 +78,7 @@ def go(config: DictConfig):
 
         if "data_split" in active_steps:
             _ = mlflow.run(
-                f"{config['main']['components_repository']}/train_val_test_split",
+                os.path.join(hydra.utils.get_original_cwd(), "components", "train_val_test_split"),
                 "main",
                 parameters={
                     "input": "clean_sample.csv:latest",
@@ -88,7 +88,7 @@ def go(config: DictConfig):
                 },
             )
 
-        if "train_random_forest" in active_steps:
+        if "train_random_forest" in active_shttps://wandb.ai/iti_mahmoud/nyc_airbnb/artifacts/clean_sample/clean_sample.csv/v0teps:
 
             # NOTE: we need to serialize the random forest configuration into JSON
             rf_config = os.path.abspath("rf_config.json")

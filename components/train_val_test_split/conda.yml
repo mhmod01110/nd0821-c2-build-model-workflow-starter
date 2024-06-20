@@ -10,8 +10,9 @@ dependencies:
   - scikit-learn=0.24.1
   - pandas=1.2.3
   - numpy=1.22.4
-  - gcc_linux-64   
-  - libstdcxx-ng=9.3.0 
+  - gcc_linux-64
+  - libstdcxx-ng=12.1.0  # Ensure compatibility with required GLIBCXX version
   - pip:
-    - wandb==0.10.31
-    - git+https://github.com/udacity/nd0821-c2-build-model-workflow-starter.git#egg=wandb-utils&subdirectory=components
+      - wandb==0.10.31
+      - protobuf<=3.20.3  # Downgrade protobuf for compatibility
+      - git+https://github.com/udacity/nd0821-c2-build-model-workflow-starter.git#egg=wandb-utils&subdirectory=components

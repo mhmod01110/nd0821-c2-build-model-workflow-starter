@@ -8,5 +8,9 @@ dependencies:
   - scipy=1.5.2
   - pip=20.3.3
   - gcc
+  - gcc_linux-64   
+  - libstdcxx-ng=9.3.0  
   - pip:
-      - wandb==0.10.21
+    - wandb==0.10.31
+    - protobuf<=3.20.3  
+    - git+https://github.com/udacity/nd0821-c2-build-model-workflow-starter.git#egg=wandb-utils&subdirectory=components
